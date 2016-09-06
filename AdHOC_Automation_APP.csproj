@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE591823-558C-4627-B98F-09931A2494A2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdHOC_Automation_APP</RootNamespace>
+    <AssemblyName>AdHOC_Automation_APP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdHoc.PRF">
+      <HintPath>..\..\AdHoc.PRF\AdHoc.PRF\bin\Release\AdHoc.PRF.dll</HintPath>
+    </Reference>
+    <Reference Include="Adhoc_Adobe_Library_3_5">
+      <HintPath>\\oh50ms04\DevProd\Hughes\Adobe Library\Adhoc_Adobe_Library_3_5.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\oh50ms04\DevProd\Hughes\EXE\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MODEL\DataCombiner.cs" />
+    <Compile Include="VIEW\LookupTableWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\LookupTableWindow.Designer.cs">
+      <DependentUpon>LookupTableWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\CombineDataWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\CombineDataWindow.Designer.cs">
+      <DependentUpon>CombineDataWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crap\adhocAutoModel.cs" />
+    <Compile Include="MODEL\ExcelProcessing.cs" />
+    <Compile Include="MODEL\AdHocFileManager.cs" />
+    <Compile Include="MODEL\dataImport.cs" />
+    <Compile Include="MODEL\TableExport.cs" />
+    <Compile Include="VIEW\DataSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\DataSelection.Designer.cs">
+      <DependentUpon>DataSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\DBCommunication.cs" />
+    <Compile Include="Crap\ExcelDataDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crap\ExcelDataDisplay.Designer.cs">
+      <DependentUpon>ExcelDataDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crap\excelModel.cs" />
+    <Compile Include="VIEW\PDLBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\PDLBuilder.Designer.cs">
+      <DependentUpon>PDLBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\PDL_Selector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\PDL_Selector.Designer.cs">
+      <DependentUpon>PDL_Selector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\PRF.cs" />
+    <Compile Include="Crap\prfException.cs" />
+    <Compile Include="VIEW\PRF_Entry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\PRF_Entry.Designer.cs">
+      <DependentUpon>PRF_Entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\ProductionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\ProductionWindow.Designer.cs">
+      <DependentUpon>ProductionWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Crap\ExcelDataDisplay.resx">
+      <DependentUpon>ExcelDataDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\CombineDataWindow.resx">
+      <DependentUpon>CombineDataWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\DataSelection.resx">
+      <DependentUpon>DataSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\LookupTableWindow.resx">
+      <DependentUpon>LookupTableWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PDLBuilder.resx">
+      <DependentUpon>PDLBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PDL_Selector.resx">
+      <DependentUpon>PDL_Selector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PRF_Entry.resx">
+      <DependentUpon>PRF_Entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\ProductionWindow.resx">
+      <DependentUpon>ProductionWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
